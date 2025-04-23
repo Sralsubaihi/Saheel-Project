@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="image/Logo2.png">
+
+    <title>Saheel - Horse Riding</title>
+    <style>
+        .slider img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+    margin: auto; 
+    border-radius: 10px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            align-items: stretch; 
+
+        }
+
+        .activities {
+            margin: 40px auto;
+            border: 3px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+	    border-color:#a67c52;
+            background: white;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .activity {
+            border: 1.5px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+	border-color:#a67c50;
+            background: #fdf8f5;
+            text-align: center;
+            max-width: 280px;
+            margin: auto;
+            display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; }
+        
+
+        .activity img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid; 
+            border-color:black;
+        }
+
+        .activity h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .activity p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .reviews {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+       
+       .avatar {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+}
+.review h3 {
+    font-size: 14px; 
+    margin: 5px 0;
+}
+
+        .review p {
+            font-size: 12px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+       
+
+        @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .activity, .review {
+        max-width: 90%; 
+    }
+
+    .slider img {
+        height: 200px; 
+    }
+
+        }
+
+
+*{color:#5a3e28;}
+
+
+/* Default (Light Theme) */
+body {
+    background-color: #fdf8f2;
+    color: #5a3e28;
+}
+
+
+
+body.dark-theme .avatar {
+    background-color: transparent;
+}
+
+
+body.dark-theme .activities,
+body.dark-theme .reviews {
+    background-color: transparent;
+}
+
+body.dark-theme .activity,
+body.dark-theme .review-box {
+    background-color: #2a1e1a;
+    border: 1px solid #a67c52;
+}
+
+
+body.dark-theme .slider img {
+    border: 2px solid #a67c52;
+}
+#theme-toggle {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+
+body.dark-theme .review-name {
+    color: #fbeacc; 
+}
+
+
+.review {
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  background: transparent;   
+  border: none;              
+  box-shadow: none;
+}
+
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+.review-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    text-align: left;
+    z-index: 10;
+    color: #fff8ed; 
+    border: 1.5px solid #ccc;
+	border-color:#a67c50;
+    background: #fdf8f5;
+
+}
+
+.review-box img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.review-name {
+    color: #5a3e28; 
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+    </style>
+</head>
+
+
+
+    
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="image/Logo2.png" alt="Saheel Logo">
+            <div class="logo-text">
+                <h1>Saheel</h1>
+                <p>Discover the thrill of horse riding</p>
+            </div>
+        </div>
+
+
+
+        <nav>
+            <ul>
+                <li><a href="home.html"  class="active">Home</a></li>
+                <li><a href="Activity.html">Activity</a></li>
+                <li><a href="Parent Dashboard.html">Parent's Dashboard</a></li>
+                <li><a href="Administrator.html">Administrator Dashboard</a></li>
+                <li><a href="Coach.html">Coach</a></li>
+            </ul>
+        </nav>
+
+
+        <button id="theme-toggle" onclick="toggleTheme()">Change mode</button>
+
+    </header>
+
+    
+      
+
+    <main>
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <img src="image/slider.jpg" alt="Slider Image">
+    </div>
+
+     <!-- Latest Activities -->
+        <section class="activities">
+            <h2>Latest Activities</h2>
+            <div class="grid">
+                <div class="activity">
+                    <img src="image/Act7.jpg" alt="Activity 1"> 
+                    <h3>Equine Therapy</h3>
+                    <p>⭐⭐⭐☆☆</p>
+                    <p>Specialized sessions for children needing physical or emotional therapy through horse interaction.</p>
+                </div>
+                <div class="activity">
+                    <img src="image/Act4.jpg" alt="Activity 2"> 
+                    <h3>Trail Riding</h3>
+                    <p>⭐⭐⭐⭐☆</p>
+                    <p>Outdoor horseback riding tours in nature or parks.</p>
+                </div>
+                <div class="activity">
+                    <img src="image/Act2.jpg" alt="Activity 3"> 
+<h3>Jumping Training</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Teaching children how to jump small obstacles with a horse.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+   <!-- Most Popular Activities -->
+        <section class="activities">
+            <h2>Most Popular Activities</h2>
+            <div class="grid">
+                <div class="activity">
+                    <img src="image/Act5.png" alt="Activity 4"> 
+                    <h3>Horse Grooming and riding</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>A session combining horse care activities like cleaning and feeding.</p>
+                </div>
+                
+                <div class="activity">
+                    <img src="image/Act8.jpg" alt="Activity 6"> 
+                    <h3>Free Horse Riding</h3>
+                    <p>⭐⭐⭐⭐☆</p>
+                    <p>A session where riders enjoy horseback riding freely without direct trainer guidance.</p>
+                </div>
+
+                <div class="activity">
+                    <img src="image/Act4.jpg" alt="Activity 5"> 
+                    <h3>Trail Riding</h3>
+                    <p>⭐⭐⭐⭐☆</p>
+                    <p>Outdoor horseback riding tours in nature or parks.</p>
+                </div>
+            </div>
+        </section>
+
+
+   <!-- Parents Reviews Section -->
+<section class="reviews">
+    <h2>Parents Reviews</h2>
+    <div class="grid">
+      <div class="review" id="r1"
+           data-name="Aseel Mohammed"
+           data-rate="⭐⭐⭐☆☆"
+           data-text="Basic riding was well-organized. We’ll definitely sign up again!"
+           data-image="image/review1.jpg">
+        <img src="image/Profile1.png" class="avatar" alt="Aseel">
+      </div>
+  
+      <div class="review" id="r2"
+           data-name="Khalid Saad"
+           data-rate="⭐⭐⭐⭐☆"
+           data-text="Equine therapy made a huge difference in my son's confidence."
+           data-image="image/review2.jpg">
+        <img src="image/Profile2.png" class="avatar" alt="Khalid">
+      </div>
+  
+      <div class="review" id="r3"
+           data-name="Ahmad Tariq"
+           data-rate="⭐⭐⭐⭐⭐"
+           data-text="The coaches are skilled, friendly, and great with kids. Highly recommend!"
+           data-image="image/review3.jpg">
+        <img src="image/Profile3.png" class="avatar" alt="Ahmad">
+      </div>
+    </div>
+  </section>
+  
+  
+
+</main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h4 class="footer-title">Contact Us</h4>
+            <p>📞 +966 5555 12345</p>
+            <p>📧 saheel@example.com</p>
+        </div>
+        <div class="footer-center">
+            <p>&copy; 2024 Saheel. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <img src="image/logo.png" alt="Saheel Logo">
+        </div>
+    </footer>
+    <script>
+        var reviews = document.querySelectorAll(".review");
+      
+        reviews.forEach(function (review) {
+          var avatar = review.querySelector(".avatar");
+      
+          var box = document.createElement("div");
+          box.className = "review-box";
+          review.appendChild(box);
+      
+          avatar.addEventListener("mouseenter", function () {
+            var name = review.getAttribute("data-name");
+            var rate = review.getAttribute("data-rate");
+            var text = review.getAttribute("data-text");
+            var image = review.getAttribute("data-image");
+      
+            var inner = "<img src='" + image + "'>";
+            inner += "<strong class='review-name'>" + name + "</strong><br>";
+            inner += "<span>" + rate + "</span>";
+            inner += "<p>" + text + "</p>";
+      
+            box.innerHTML = inner;
+            box.style.display = "block";
+          });
+      
+          avatar.addEventListener("mouseleave", function () {
+            box.style.display = "none";
+          });
+        });
+      </script>
+      
+  <script src="theme.js"></script>
+
+
+    </body>
+</html>
