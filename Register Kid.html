@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register a New Kid - Saheel</title>
+     <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="image/Logo2.png">
+
+	<style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf8f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: #5a3e28;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+
+.breadcrumb {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #d2b48c;
+    color: #5a3e28;
+}
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a3e28; 
+}
+
+ .form-container {
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+body.dark-theme .form-container {
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+h2 {
+    text-align: center;
+    color: #5a3e28;
+    margin-bottom: 20px;
+}
+
+
+.section-title {
+    background-color: #5a3e28;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 10px 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #5a3e28;
+    align-self: center;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #c4a484;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.gender-label {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.gender-select {
+    font-size: 16px;
+    cursor: pointer;
+	padding: 8px;
+    border: 1px solid #c4a484;
+    border-radius: 5px;
+    width: 80%;
+}
+
+button {
+    background-color: #5a3e28;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    width: 50%;
+	text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #7d5a3b;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+        <div class="logo">
+            <img src="image/Logo2.png" alt="Saheel Logo">
+            <div class="logo-text">
+                <h1>Saheel</h1>
+                <p>Discover the thrill of horse riding</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li ><a href="home.html">Home</a></li>
+                <li><a href="Activity.html">Activity</a></li>
+                <li><a href="Parent Dashboard.html" class="active">Parent's Dashboard</a></li>
+                <li><a href="Administrator.html">Administrator Dashboard</a></li>
+                <li><a href="Coach.html">Coach</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="breadcrumb"><a href="home.html">Home</a> > <a href="Parent Dashboard.html">Parent's Dashboard</a> > Register a New Kid</div>
+ 
+<div class="form-container">
+    <h2>Register a New Kid</h2>
+
+    <div class="section-title">Kid's Information</div>
+    <form  action="" method="get">
+        <div class="form-grid">
+            <label for="name">Kid's Name</label>
+            <input type="text" id="name" placeholder="Enter kid's name">
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+			
+			<label for="age">Age</label>
+            <input type="text" id="Age" placeholder="Enter kid's age">
+
+            <label for="gender" class="gender-label">Gender</label>
+        <select id="gender" name="gender" class="gender-select">
+            <option value="" disabled selected>Choose Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+            <label for="photo">Photo</label>
+            <input type="file" id="photo">
+
+            <label for="weight">Weight</label>
+            <input type="text" id="weight" placeholder="Enter weight">
+
+            <label for="height">Height</label>
+            <input type="text" id="height" placeholder="Enter height">
+        </div>
+
+        <div class="section-title">Contact Information</div>
+        <div class="form-grid">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="Enter phone number">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter email">
+        </div>
+<div class="button-container">
+                    <button type="submit"  value="submit">Register Kid</button>
+
+</div>
+      
+    </form>
+</div>
+
+ <footer>
+        <div class="footer-left">
+            <h4 style:"color:#5a3e28">Contact Us</h4>
+            <p>📞 +966 5555 12345</p>
+            <p>📧 saheel@example.com</p>
+        </div>
+        <div class="footer-center">
+            <p>&copy; 2024 Saheel. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <img src="image/logo.png" alt="Saheel Logo">
+        </div>
+    </footer>
+<script>
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const dob = document.getElementById("dob").value;
+    const age = document.getElementById("Age").value.trim();
+    const gender = document.getElementById("gender").value;
+    const photo = document.getElementById("photo").files[0];
+    const weight = document.getElementById("weight").value.trim();
+    const height = document.getElementById("height").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    if (!name || !dob || !age || !gender || !photo || !weight || !height || !phone || !email) {
+        alert("All fields are required!");
+        return;
+    }
+
+    if (!isNaN(name) || /^[0-9]/.test(name)) {
+        alert("Name must start with a letter and cannot be a number.");
+        return;
+    }
+
+    if (!email.includes("@")) {
+        alert("Invalid email: must contain @");
+        return;
+    }
+
+    const birthYear = new Date(dob).getFullYear();
+    if (birthYear > 2020) {
+        alert("DOB should not be after 2020 (must be 5 years or older).");
+        return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Phone number must be exactly 10 digits.");
+        return;
+    }
+
+    let kids = JSON.parse(localStorage.getItem("kids")) || [];
+    kids.push({ name, dob, age, gender, weight, height, phone, email });
+    localStorage.setItem("kids", JSON.stringify(kids));
+
+    const win = window.open('', '', 'width=600,height=500');
+    win.document.write('<html><head><title>Kid Info</title></head><body>');
+    win.document.write('<h2>Child Information</h2>');
+    win.document.write('<p><strong>Name:</strong> ' + name + '</p>');
+    win.document.write('<p><strong>Date of Birth:</strong> ' + dob + '</p>');
+    win.document.write('<p><strong>Age:</strong> ' + age + '</p>');
+    win.document.write('<p><strong>Gender:</strong> ' + gender + '</p>');
+    win.document.write('<p><strong>Weight:</strong> ' + weight + '</p>');
+    win.document.write('<p><strong>Height:</strong> ' + height + '</p>');
+    win.document.write('<p><strong>Phone:</strong> ' + phone + '</p>');
+    win.document.write('<p><strong>Email:</strong> ' + email + '</p>');
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        kids[kids.length - 1].photo = e.target.result;
+        localStorage.setItem("kids", JSON.stringify(kids));
+        win.document.write('<p><strong>Photo:</strong><br><img src="' + e.target.result + '" width="100"/></p>');
+        win.document.write('</body></html>');
+        win.document.close();
+        win.print();
+    };
+    reader.readAsDataURL(photo);
+	 // مسح الحقول بعد الإضافة
+    document.querySelector("form").reset();
+
+});
+
+</script>
+<script src="theme.js"></script>
+</body>
+</html>
