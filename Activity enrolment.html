@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Activity Enrollment</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="image/Logo2.png">
+
+
+    <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .selection-container {
+            text-align: center;
+            flex-grow: 1;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding : 4px 5px;
+           margin-right: 450px;
+           margin-left: 450px;
+           margin-top: 50px;
+
+        }
+
+        .container {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+
+.toggle-container, .coach {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 60px;
+
+
+    
+}
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1% 15%; 
+}
+
+
+.coach {
+    margin: 1% 17%; 
+}
+
+  
+        
+.activity-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    border: solid;
+    background: #fdf8f5;
+    padding: 22px 120px;
+    border-radius: 8px;
+    margin: 0% 11%;
+    width: 60%;
+    border-color: #a67c52;
+    min-height: 500px; /* 👈 يثبت الطول */
+    position: relative; /* علشان الزر */
+}
+
+
+.activity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse; 
+    direction: rtl; 
+}
+
+.activity img {
+    width: 150px; 
+    height: 88px;
+    border-radius: 8px;
+}
+
+
+      
+
+.confirm-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+.breadcrumb {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #d2b48c;
+    color: #5a3e28;
+}
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a3e28; 
+}
+
+body.dark-theme .activity-container{
+    background-color: #2a1e1a;
+
+}
+
+body.dark-theme #levelSelectBox{
+    background-color: #61443a;
+
+}
+
+
+body.dark-theme #coachs{
+    background-color: #61443a;
+
+}
+body.dark-theme #child{
+    background-color: #61443a;
+
+}
+body.dark-theme #display-area{
+    background-color: #61443a;
+
+}
+
+body.dark-theme .confirm-btn{
+    background-color: #61443a;
+
+}
+
+
+#display-area {
+    background-color: #fdf8f5;
+    border: 2px solid #a67c52;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin: 40px auto;
+    width: 60%;
+    font-family: 'Arial', sans-serif;
+    color: #5a3e28;
+    box-shadow: 0 4px 8px rgba(166, 124, 82, 0.2);
+    direction: rtl;
+}
+
+#display-area h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #a67c52;
+    border-bottom: 1px solid #d8c3b0;
+    padding-bottom: 10px;
+}
+
+#display-area ul {
+    list-style: none;
+    color:#d8c3b0;
+    padding-left: 0;
+}
+
+body.dark-theme .activity-name {
+    color: white; 
+}
+
+body.dark-theme .coach-name {
+    color: #dedbd1; 
+}
+
+
+
+
+#display-area li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #f3eeea;
+}
+
+#display-area li:last-child {
+    border-bottom: none;
+}
+
+
+    </style>
+</head>
+<header>
+    <div class="logo">
+        <img src="image/Logo2.png" alt="Saheel Logo">
+        <div class="logo-text">
+            <h1>Saheel</h1>
+            <p>Discover the thrill of horse riding</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li ><a href="home.html">Home </a></li>
+            <li ><a href="Activity.html">Activity </a></li>
+            <li><a href="Parent Dashboard.html" class="active">Parent's Dashboard </a></li>
+            <li><a href="Administrator.html">Administrator Dashboard </a></li>
+            <li><a href="Coach.html">Coach </a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="breadcrumb"><a href="home.html">Home</a> > <a href="Parent Dashboard.html">Parent's Dashboard</a> > Activity enrolment</div>
+
+
+   
+    
+    <main>
+
+        <form  action="" method="get">
+
+        <div class="selection-container">
+            <label for="child">Select the child name:</label>
+            <select id="child">
+                <option value="" disabled selected hidden>select child</option>
+            
+            </select>
+            
+        </div>
+
+
+
+        <div class="container">
+            <div class="toggle-container">
+                <input type="radio" id="level" name="toggle" value="Activity Level">
+                <label for="level">Activity Level</label>
+                <select id="levelSelectBox">
+                    <option value="" disabled selected hidden >select level </option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Professional">Professional</option>
+                </select>
+            </div>
+        
+            <div class="coach">
+                <input type="radio" id="coach" name="toggle" value="Coach">   
+                <label for="coach">Coach</label>
+                <select id="coachs">
+                    <option value="" disabled selected hidden >select coach </option>
+
+                        <option value="Michael Brown">Michael Brown</option>
+                        <option value="James Anderson">James Anderson</option>
+                        <option value="Isabella Martinez">Isabella Martinez</option>                
+                        <option value="Sarah Lee">Sarah Lee</option>
+                        <option value="Daniel Roberts">Daniel Roberts</option>
+                        <option value="Emily Thompson">Emily Thompson</option>
+                        <option value="Olivia Parker">Olivia Parker</option>
+                  
+                </select>
+            </div>
+        </div>
+        
+
+
+        <div class="activity-container">
+            <div class="activity">
+                <input type="checkbox" value="Equine Therapy" data-coach="Emily Thompson">
+                <img src="image/Act7.jpg" alt="Equine Therapy">
+                <span>Equine Therapy</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Horse Grooming and Riding" data-coach="Isabella Martinez">
+                <img src="image/Act5.png" alt="Horse Grooming and Riding">
+                <span>Horse Grooming</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Jumping Training" data-coach="James Anderson">
+                <img src="image/Act2.jpg" alt="Jumping Training">
+                <span>Jumping Training</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Trail Riding" data-coach="Daniel Roberts">
+                <img src="image/Act4.jpg" alt="Trail Riding">
+                <span>Trail Riding</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Free Riding" data-coach="Olivia Parker">
+                <img src="image/Act8.jpg" alt="Free riding">
+                <span>Free riding</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Basic Horse Riding" data-coach="Michael Brown">
+                <img src="image/Act1.jpeg" alt="Basic horse riding">
+                <span>Basic horse riding</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Horse Racing Basics" data-coach="Sarah Lee">
+                <img src="image/Act3.jpeg" alt="Horse racing basic">
+                <span>Horse racing basic</span>
+            </div>
+            <div class="activity">
+                <input type="checkbox" value="Correct Riding Posture" data-coach="Michael Brown">
+                <img src="image/Act6.jpeg" alt="Correct riding posture">
+                <span>Correct riding posture</span>
+            </div>
+        
+                <div class = "confirm-btn" >
+                    <button type="submit"  value="submit">Confirm Enrollment</button>
+    
+                </div>
+        
+            </div>
+
+    </form>
+    
+    
+    </main>
+    <div id="display-area"></div>
+
+   <!-- footer-->
+   
+ 
+    <footer>
+        <div class="footer-left">
+            <h4 class="footer-title">Contact Us</h4>
+            <p>📞 +966 5555 12345</p>
+            <p>📧 saheel@example.com</p>
+        </div>
+        <div class="footer-center">
+            <p>&copy; 2024 Saheel. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <img src="image/logo.png" alt="Saheel Logo">
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+    // for register page 
+
+//Retrieve the kid's names from the local storage. *******
+function populateKidsDropdown() {
+    let kids = JSON.parse(localStorage.getItem('kids')) || []; // استرجاع بيانات الأطفال من localStorage
+    console.log(kids); // تحقق من البيانات المخزنة
+    let kidSelect = document.getElementById('child'); 
+    kidSelect.innerHTML = '<option value="" disabled selected hidden>select child</option>'; // إعادة تعيين القائمة
+
+    // إضافة أسماء الأطفال إلى القائمة
+    kids.forEach(kid => {
+        let option = document.createElement('option');
+        option.value = kid.name;
+        option.textContent = kid.name;
+        kidSelect.appendChild(option);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    populateKidsDropdown();
+});
+
+
+
+
+
+
+
+//for this page + evaluation 
+
+
+//Create multidimensional array in JS for activities*****
+const activities = [
+    { name: "Equine Therapy", coach: "Emily Thompson", level: "Beginner", image: "image/Act7.jpg" },
+    { name: "Horse Grooming", coach: "Isabella Martinez", level: "Beginner", image: "image/Act5.png" },
+    { name: "Jumping Training", coach: "James Anderson", level: "Professional", image: "image/Act2.jpg" },
+    { name: "Trail Riding", coach: "Daniel Roberts", level: "Intermediate", image: "image/Act4.jpg" },
+    { name: "Free riding", coach: "Olivia Parker", level: "Intermediate", image: "image/Act8.jpg" },
+    { name: "Basic horse riding", coach: "Michael Brown", level: "Beginner", image: "image/Act1.jpeg" },
+    { name: "Horse racing basic", coach: "Sarah Lee", level: "Intermediate", image: "image/Act3.jpeg" },
+    { name: "Correct Riding Posture", coach: "Michael Brown", level: "Professional", image: "image/Act6.jpeg" }
+];
+
+
+
+
+const activityContainer = document.querySelector(".activity-container");
+const coachRadio = document.getElementById("coach");
+const levelRadio = document.getElementById("level");
+const coachSelect = document.getElementById("coachs");
+const levelSelect = document.getElementById("levelSelectBox");
+const form = document.querySelector("form");
+
+
+
+// عرض الأنشطة
+function renderActivities(filteredActivities) {
+    activityContainer.innerHTML = "";
+
+    filteredActivities.forEach(act => {
+        const div = document.createElement("div");
+        div.className = "activity";
+        div.innerHTML = `
+            <input type="checkbox" value="${act.name}" data-coach="${act.coach}">
+            <img src="${act.image}" alt="${act.name}">
+            <span>${act.name}</span>
+        `;
+        activityContainer.appendChild(div);
+    });
+
+    const confirmBtn = document.createElement("button");
+    confirmBtn.textContent = "Confirm Enrollment";
+    confirmBtn.className = "confirm-btn";
+    confirmBtn.type = "submit";
+    activityContainer.appendChild(confirmBtn);
+}
+
+// عرض الكل أولاً
+renderActivities(activities);
+
+
+// فلترة حسب المدرب
+coachSelect.addEventListener("change", () => {
+    if (!coachRadio.checked) return;
+    const selectedCoach = coachSelect.value;
+    const filtered = activities.filter(a => a.coach === selectedCoach);
+    renderActivities(filtered);
+});
+
+// فلترة حسب المستوى
+levelSelect.addEventListener("change", () => {
+    if (!levelRadio.checked) return;
+    const selectedLevel = levelSelect.value;
+    const filtered = activities.filter(a => a.level === selectedLevel);
+    renderActivities(filtered);
+});
+
+
+
+
+
+
+// معالجة الإرسال - تسجيل الطفل + حفظ الأنشطة
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const selectedKid = document.getElementById("child").value;
+    const checkedActivities = [...document.querySelectorAll(".activity input[type='checkbox']:checked")];
+
+    if (!selectedKid) {
+        alert("Please select a child's name.");
+        return;
+    }
+
+    if (checkedActivities.length === 0) {
+        alert("Please select at least one activity.");
+        return;
+    }
+
+    // حفظ في localStorage
+    let stored = JSON.parse(localStorage.getItem("enrolledActivities")) || [];
+
+    checkedActivities.forEach(cb => {
+        const activityName = cb.value;
+        if (!stored.includes(activityName)) {
+            stored.push(activityName);
+        }
+    });
+
+    localStorage.setItem("enrolledActivities", JSON.stringify(stored));
+
+    // عرض ملخص التسجيل
+    const displayArea = document.getElementById("display-area");
+    displayArea.innerHTML = "";
+
+    const resultDiv = document.createElement("div");
+    resultDiv.id = "result";
+    resultDiv.innerHTML = `<h3>Enrollment Summary</h3><p><strong>Child's Name:</strong> ${selectedKid}</p><ul>`;
+
+        checkedActivities.forEach(cb => {
+    const coach = cb.getAttribute("data-coach");
+    resultDiv.innerHTML += `<li>
+        <span class="activity-name">${cb.value}</span>
+        <span class="coach-name"> (Coach: ${coach})</span>
+    </li>`;
+});
+
+    resultDiv.innerHTML += `</ul>`;
+
+    // زر إعادة التعيين
+    const resetBtn = document.createElement("button");
+    resetBtn.textContent = "Reset";
+    resetBtn.id = "reset-btn";
+    resetBtn.addEventListener("click", () => {
+        form.reset();
+        displayArea.innerHTML = "";
+        renderActivities(activities);
+    });
+
+    resultDiv.appendChild(resetBtn);
+    displayArea.appendChild(resultDiv);
+
+    alert("Activities enrolled successfully!");
+});
+</script>
+
+
+<script src="theme.js"></script>
+
+
+</body>
+</html>
