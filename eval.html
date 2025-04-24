@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Evaluation</title>
+  <link rel="stylesheet" href="style.css" >
+  <link rel="icon" type="image/png" href="image/Logo2.png" >
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf8f2;
+    }
+
+    html,
+    body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .evaluation {
+      flex: 1;
+      color: #5a3e28;
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #5a3e28;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #a67c52;
+    }
+
+    .breadcrumb {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #d2b48c;
+      color: #5a3e28;
+      text-align: left;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #5a3e28;
+    }
+
+    .evaluation-box {
+      background: #ece2cb;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 60%;
+      margin: auto;
+    }
+
+
+body.dark-theme .evaluation-box{
+    background-color:  #2a1e1a;
+}
+
+body.dark-theme .send-button{
+background-color:  #a67c52;
+}
+
+    .activity-rating-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fdf8f2;
+      padding: 8px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 5px;
+    }
+
+    .rating-stars .star {
+      font-size: 36px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .rating-stars .star.selected {
+      color: gold;
+    }
+
+    .activity-select {
+      flex: none;
+      width: 27%;
+      height: 73%;
+      padding: 4px;
+      font-size: 12px;
+      border: 1px solid #ccc;
+      background: #fdf8f2;
+      border-radius: 5px;
+    }
+
+    .feedback-input {
+      width: 97%;
+      height: 120px;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      background: #fdf8f2;
+      margin-bottom: 15px;
+    }
+
+    .send-button {
+      display: block;
+      width: 17%;
+      margin: 20px auto;
+      background: #5a3e28;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .send-button:hover {
+      background: #7a563a;
+    }
+
+    .add-button {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #7a563a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease-in-out;
+    }
+
+    .add-button:hover {
+      background-color: #5a3e28;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="image/Logo2.png" alt="Saheel Logo" >
+      <div class="logo-text">
+        <h1>Saheel</h1>
+        <p>Discover the thrill of horse riding</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Activity.html">Activity</a></li>
+        <li><a href="ParentDashboard.html" class="active">Parent's Dashboard</a></li>
+        <li><a href="Administrator.html">Administrator Dashboard</a></li>
+        <li><a href="Coach.html">Coach</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="home.html">Home</a> > <a href="ParentDashboard.html">Parent's Dashboard</a> > Evaluate Activities
+  </div>
+
+  <section class="evaluation">
+    <h2>My Feedback</h2>
+    <form id="evaluationForm" method="get">
+      <div class="evaluation-box">
+        <div class="activity-rating-container">
+          <select id="activity" name="activity" class="activity-select" required>
+            <option value="">My Activity</option>
+
+
+
+          </select>
+
+          <div class="rating-stars" id="starContainer">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
+          <input type="hidden" id="ratingValue" name="rating" >
+        </div>
+
+        <div class="feedback">
+          <textarea
+            id="comment"
+            name="comment"
+            class="feedback-input"
+            placeholder="Write your comment here..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="send-button">Send</button>
+      </div>
+    </form>
+  </section>
+
+  <button class="add-button">+</button>
+
+  <footer>
+    <div class="footer-left">
+	
+            <h4 class="footer-title">Contact Us</h4>
+            <p>📞 +966 5555 12345</p>
+      <p>📧 saheel@example.com</p>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2024 Saheel. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <img src="image/logo.png" alt="Saheel Logo" >
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const activitySelect = document.getElementById("activity");
+      const storedActivities = JSON.parse(localStorage.getItem("enrolledActivities")) || [];
+
+      activitySelect.innerHTML = "";
+
+      if (storedActivities.length > 0) {
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select an activity";
+        activitySelect.appendChild(defaultOption);
+
+        storedActivities.forEach((activity) => {
+          const option = document.createElement("option");
+          option.value = activity;
+          option.textContent = activity;
+          activitySelect.appendChild(option);
+        });
+      } else {
+        const noOption = document.createElement("option");
+        noOption.value = "";
+        noOption.textContent = "No registered activities";
+        activitySelect.appendChild(noOption);
+      }
+
+      // تفاعل النجوم
+      const stars = document.querySelectorAll(".star");
+      const ratingInput = document.getElementById("ratingValue");
+
+      stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          ratingInput.value = star.dataset.value;
+
+          stars.forEach((s, i) => {
+            if (i <= index) {
+              s.classList.add("selected");
+            } else {
+              s.classList.remove("selected");
+            }
+          });
+        });
+      });
+
+      // التحقق عند الإرسال
+      document.getElementById("evaluationForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const selected = activitySelect.value;
+        const comment = document.getElementById("comment").value.trim();
+        const selectedRating = ratingInput.value;
+
+        if (!selected) {
+          alert("Please select an activity.");
+          return;
+        }
+
+        if (!selectedRating) {
+          alert("Please select a rating.");
+          return;
+        }
+
+        if (!comment) {
+          alert("Please write your comment.");
+          return;
+        }
+
+        alert(`Thank you for your feedback!\nYour rating for activity "${selected}" is ${selectedRating}`);
+        window.location.href = "home.html";
+      });
+    });
+  </script>
+  
+  <script src= "theme.js"></script>
+
+  
+  
+  
+</body>
+</html>

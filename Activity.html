@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+          <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="image/Logo2.png">
+	<style>
+	 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf8f2;
+}
+
+
+.breadcrumb {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #d2b48c;
+    color: #5a3e28;
+	text-align: left;
+}
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a3e28; 
+}
+/* ======= Activity Section Styling ======= */
+.activities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.activity {
+    background: #ece2cb;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    font-size: 37px; 
+    font-weight: bold; 
+    color: #5a3e28; 
+    margin-top: 30px; 
+    margin-bottom: 45px; 
+    display: block; 
+}
+
+
+.activity:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.activity img {
+    width: 100%;
+    max-width: 340px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.dark-theme .activity {
+    background-color: #2a1e1a;
+    
+}
+
+body.dark-theme .activity-info-hover{
+
+background-color: #d9bcb3;
+
+}
+
+
+
+.activity:hover img {
+    transform: scale(1.05);
+}
+.objectives{
+    text-align: left;
+
+
+}
+
+.activity h2 {
+    color: #5a3e28;
+    margin: 10px 0;
+}
+
+.activity p {
+    font-size: 17px;
+    color: #5a3e28;
+    margin: 5px 0;
+}
+
+.activity-info {
+    font-size: 14px;
+    color: #5a3e28;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coach-info {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+}
+
+/* ======= Activity Hover Information ======= */
+.activity-info-hover {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 250, 240, 0.8);
+    color: #5a3e28;
+    padding: 15px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.activity:hover .activity-info-hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+/* ======= Footer ---> in other file ======= */
+
+	.level-tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.beginner {
+  background-color: #5cb85c;
+}
+
+.intermediate {
+  background-color: #f0ad4e;
+}
+
+.professional {
+  background-color: #d9534f;
+}
+	
+		</style>
+
+	
+	
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="image/Logo2.png" alt="Saheel Logo">
+        <div class="logo-text">
+            <h1 style =" text-align: left">Saheel</h1>
+            <p>Discover the thrill of horse riding</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="Activity.html" class="active">Activity</a></li>
+            <li><a href="ParentDashboard.html">Parent's Dashboard</a></li>
+            <li><a href="Administrator.html">Administrator Dashboard</a></li>
+            <li><a href="Coach.html">Coach</a></li>
+        </ul>
+    </nav>
+</header>
+	
+    <!-- ======= Navigation Bar ======= -->
+    <div class="breadcrumb">
+    <a href="home.html">Home</a> >Activity </div>
+
+    
+    <main>
+        <h1>Activity<br> </h1> 
+        <div class="activities-wrapper">
+            <div class="activities-container">
+			
+			
+			
+			<!-- Activity 3 -->
+           <div class="activity">
+           <img src="image/Act3.jpeg" alt="Activity 1">
+
+            <h2>Horse Racing Basics</h2>
+            <p>This activity introduces children to the basics of horse riding</p>
+                     <br>
+			
+    <div class="activity-info-hover">
+		<div class="activity-info">
+             <span>📅<br>Tuesday - Friday</span> <br>|
+             <span>👶<br> Years 6+  </span> <br>|
+             <span>⏰<br>4:00 - 5:30 PM</span>
+          </div>
+			
+			<div class="activity-level" style="margin: 5px 0;">
+            <span class="level-tag intermediate">Level: Intermediate</span>  
+              </div>
+
+
+            <ul class="objectives">
+               <li>Teach basic balance🎯 </li>
+               <li>Control the horse using reins and basic guidance🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Sarah Lee🏇</span>
+            </div>
+			
+		
+		
+		
+    </div>
+	
+       </div>
+
+
+				
+									<!-- Activity 2 -->
+
+                <div class="activity">
+                    <img src="image/Act2.jpg" alt="Activity 1">
+                    <h2>Jumping Training</h2>
+					
+            <p>A fun and engaging session to teach children how to guide horses over small obstacles safely</p>
+        <br>
+			
+    <div class="activity-info-hover">
+	
+           <div class="activity-info">
+             <span>📅<br> Wednesday - Saturday</span> <br>|
+             <span>👶<br> Years 10+ </span> <br>|
+             <span>⏰<br>5:00 - 5:45 PM</span>
+          </div>
+			
+			<div class="activity-level" style="margin: 5px 0;">
+            <span class="level-tag professional">Level: Professional</span>
+            </div>
+
+
+            <ul class="objectives">
+               <li>Enhance balance and confidence🎯 </li>
+               <li> Learn proper jumping techniques🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: James Anderson🏇</span>
+            </div>
+			</div>
+
+       </div>
+
+									<!-- Activity 1 -->
+
+                <div class="activity">
+           <img src="image/Act1.jpeg" alt="Activity 1">
+                    <h2>Basic Horse Riding</h2>
+					
+            <p>This activity introduces children to the basics of horse riding</p>
+        <br>
+
+    <div class="activity-info-hover">
+	
+           <div class="activity-info">
+             <span>📅<br>Tuesday - Friday</span> <br>|
+             <span>👶<br>6-12 Years  </span> <br>|
+             <span>⏰<br>4:00 - 5:30 PM</span>
+          </div>
+				
+				<div class="activity-level" style="margin: 5px 0;">
+               <span class="level-tag beginner">Level: Beginner</span>
+                  </div>
+
+
+            <ul class="objectives">
+               <li>Teach basic balance🎯 </li>
+               <li>Control the horse using reins and basic guidance🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Michael Brown🏇</span>
+            </div>
+			            </div>
+
+       </div>
+
+									<!-- Activity 6 -->
+
+                <div class="activity">
+           <img src="image/Act6.jpeg" alt="Activity 6">
+                    <h2>Correct Riding Posture</h2>
+            <p>A focused session on improving posture, balance, and reducing injury risks while riding</p>
+        <br>
+
+    <div class="activity-info-hover">
+           <div class="activity-info">
+             <span>📅<br>Tuesday - Saturday</span> <br>|
+             <span>👶<br> Years 7+  </span> <br>|
+             <span>⏰<br> 4:00 - 4:30 PM</span>
+          </div>
+					
+		    	<div class="activity-level" style="margin: 5px 0;">
+                <span class="level-tag professional">Level: Professional</span>
+               </div>
+
+
+            <ul class="objectives">
+               <li> Improve riding stability and control🎯 </li>
+               <li> Learn correct body alignment while riding🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Michael Brown🏇</span>
+            </div>
+			            </div>
+
+       </div>
+
+				
+									<!-- Activity 5 -->
+
+                <div class="activity">
+           <img src="image/Act5.png" alt="Activity 5" >
+                    <h2>Horse Grooming and Riding</h2>
+            <p>This activity introduces children to the basics of horse riding</p>
+        <br>
+
+
+    <div class="activity-info-hover">
+
+           <div class="activity-info">
+             <span>📅<br>Monday - Wednesday</span> <br>|
+             <span>👶<br>Years 6+ </span> <br>|
+             <span>⏰<br> 3:30 - 4:30  PM</span>
+          </div>
+					<div class="activity-level" style="margin: 5px 0;">
+                   <span class="level-tag beginner">Level: Beginner</span>
+                </div>
+
+
+            <ul class="objectives">
+               <li> Teach responsibility and horse care🎯 </li>
+               <li> Strengthen the bond between rider and horse🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach:  Isabella Martinez🏇</span>
+            </div>
+			            </div>
+
+       </div>
+
+									<!-- Activity 4 -->
+
+                <div class="activity">
+           <img src="image/Act4.jpg" alt="Activity 4" >
+                    <h2>Trail Riding</h2>
+            <p>An outdoor riding experience in a natural setting to build confidence and relaxation with horses</p>
+        <br>
+
+
+    <div class="activity-info-hover">
+
+           <div class="activity-info">
+             <span>📅<br>Friday - Sunday</span> <br>|
+             <span>👶<br>  Years 8+  </span> <br>|
+             <span>⏰<br>  10:00 - 12:00 PM</span>
+          </div>
+
+            <div class="activity-level" style="margin: 5px 0;">
+  <span class="level-tag intermediate">Level: Intermediate</span>
+</div>
+ 
+            <ul class="objectives">
+               <li> Enhance rider confidence in open spaces🎯 </li>
+               <li>Experience horseback riding in nature🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Daniel Roberts🏇</span>
+            </div>
+			            </div>
+
+       </div>
+
+				
+									<!-- Activity 7 -->
+
+                <div class="activity">
+           <img src="image/Act7.jpg" alt="Activity 7" >
+
+                    <h2>Equine Therapy</h2>
+            <p>A therapeutic riding session designed to support children's emotional and physical well-being through interaction with horses</p>
+        <br>
+
+    <div class="activity-info-hover">
+
+           <div class="activity-info">
+             <span>📅<br>Sunday - Wednesday</span> <br>|
+             <span>👶<br>Years 6+  </span> <br>|
+             <span>⏰<br>2:00 - 3:00 PM</span>
+          </div>
+
+<div class="activity-level" style="margin: 5px 0;">
+  <span class="level-tag beginner">Level: Beginner</span>
+</div>
+
+            <ul class="objectives">
+               <li> Enhance emotional connection and relaxation🎯 </li>
+               <li> Improve coordination and motor skills🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Emily Thompson🏇</span>
+            </div>
+						            </div>
+
+       </div>
+
+									<!-- Activity 8 -->
+
+                <div class="activity">
+           <img src="image/Act8.jpg" alt="Activity 8" >
+
+                    <h2>Free Riding</h2>
+            <p>An enjoyable and unstructured riding session where children can explore and ride freely under supervision</p>
+        <br>
+		
+    <div class="activity-info-hover">
+
+           <div class="activity-info">
+             <span>📅<br>Monday - Friday</span> <br>|
+             <span>👶<br> Years 8+  </span> <br>|
+             <span>⏰<br>3:30 - 4:30 PM</span>
+          </div>
+
+<div class="activity-level" style="margin: 5px 0;">
+  <span class="level-tag intermediate">Level: Intermediate</span>
+</div>
+
+            <ul class="objectives">
+               <li>Encourage independent riding skills🎯 </li>
+               <li>Allow children to explore horse riding at their own pace🎯 </li>
+            </ul>
+	
+            <div class="coach-info">
+              <span>Coach: Olivia Parker  🏇</span>
+            </div>
+
+       </div>
+
+            </div>
+        </div>
+		</div>
+    </main>
+    <!-- footer-->
+	
+	<footer>
+        <div class="footer-left">
+		
+            <h4 class="footer-title">Contact Us</h4>
+            <p>📞 +966 5555 12345</p>
+            <p>📧 saheel@example.com</p>
+        </div>
+        <div class="footer-center">
+            <p>&copy; 2024 Saheel. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <img src="image/logo.png" alt="Saheel Logo">
+        </div>
+    </footer>
+	<script src= "theme.js"></script>
+
+</body>
+</html>

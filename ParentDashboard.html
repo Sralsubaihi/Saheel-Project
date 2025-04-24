@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Parent's Dashboard - Saheel</title>
+	<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="image/Logo2.png">
+
+    <style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf8f2;
+	background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: #5a3e28;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.navbar a.active {
+    text-decoration: underline;
+}
+
+
+.breadcrumb {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #d2b48c; 
+    color: #5a3e28;
+}
+a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5a3e28; 
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #5a3e28;
+}
+
+
+.kids-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px 0;
+}
+
+.kid-card {
+    text-align: center;
+}
+
+
+.kid-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+	background-color: #fdf8f2;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #5a3e28;
+    margin: 0 auto;
+}
+
+
+.kid-circle.female {
+    background-image: url(image/female.png);
+}
+
+
+.kid-circle.male1 {
+    background-image: url(image/male1.png);
+}
+.kid-circle.male2 {
+    background-image: url(image/male2.png);
+}
+
+
+.kid-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #5a3e28;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 30px 0;
+}
+
+button {
+    background-color: #5a3e28;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #7d5a3b;
+}
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+        <div class="logo">
+            <img src="image/Logo2.png" alt="Saheel Logo">
+            <div class="logo-text">
+                <h1>Saheel</h1>
+                <p>Discover the thrill of horse riding</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li ><a href="home.html">Home</a></li>
+                <li><a href="Activity.html">Activity</a></li>
+                <li><a href="ParentDashboard.html" class="active">Parent's Dashboard</a></li>
+                <li><a href="Administrator.html">Administrator Dashboard</a></li>
+                <li><a href="Coach.html">Coach</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<div class="breadcrumb"><a href="home.html">Home</a> &gt; Parent's Dashboard</div>
+
+<h2 class="title">Your Kids</h2>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <label for="sort-options">Sort by:</label>
+    <select id="sort-options">
+        <optgroup label="Sort by Name">
+            <option value="name-asc">A to Z</option>
+            <option value="name-desc">Z to A</option>
+        </optgroup>
+        <optgroup label="Sort by Age">
+            <option value="age-asc">Youngest to Oldest</option>
+            <option value="age-desc">Oldest to Youngest</option>
+        </optgroup>
+    </select>
+</div>
+
+<div class="kids-container">
+    <div class="kid-card">
+        <div class="kid-circle female"></div>
+        <p>Lubna Saad</p>
+    </div>
+    <div class="kid-card">
+        <div class="kid-circle male1"></div>
+        <p>Saud Saad</p>
+    </div>
+    <div class="kid-card">
+        <div class="kid-circle male2"></div>
+        <p>Fares Saad</p>
+    </div>
+</div>
+
+<div class="buttons">
+<button onclick="location.href='Register kid.html'">
+    <span>➕</span> Register a New Kid
+</button>
+    <button onclick="location.href='Activity enrolment.html'">
+	<span>📋</span> Enrol in Activities</button>
+    <button onclick="location.href='eval.html'"><span>👍</span> Evaluate Activities</button>
+</div>
+
+<footer>
+    <div class="footer-left">
+        <h4 class="footer-title">Contact Us</h4>
+        <p>📞 +966 5555 12345</p>
+        <p>📧 saheel@example.com</p>
+    </div>
+    <div class="footer-center">
+        <p>&copy; 2024 Saheel. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+        <img src="image/logo.png" alt="Saheel Logo">
+    </div>
+</footer>
+
+<script>
+const defaultKids = [
+  { name: "Lubna Saad", age: 8, gender: "female" },
+  { name: "Saud Saad", age: 10, gender: "male1" },
+  { name: "Fares Saad", age: 12, gender: "male2" }
+];
+
+
+function displayKids(kids) {
+  const container = document.querySelector(".kids-container");
+  container.innerHTML = ""; 
+
+  kids.forEach(kid => {
+    const card = document.createElement("div");
+    card.className = "kid-card";
+
+    const circle = document.createElement("div");
+    circle.className = `kid-circle ${kid.gender}`;
+if (kid.photo) {
+      circle.style.backgroundImage = `url('${kid.photo}')`;
+    } else {
+      circle.classList.add(kid.gender || "female");
+    }
+    const name = document.createElement("p");
+    name.textContent = kid.name;
+
+    card.appendChild(circle);
+    card.appendChild(name);
+    container.appendChild(card);
+  });
+}
+
+
+function sortKids(kids, criteria) {
+  const sorted = [...kids]; 
+
+  if (criteria === "name-asc") {
+    sorted.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (criteria === "name-desc") {
+    sorted.sort((a, b) => b.name.localeCompare(a.name));
+  } else if (criteria === "age-asc") {
+    sorted.sort((a, b) => a.age - b.age);
+  } else if (criteria === "age-desc") {
+    sorted.sort((a, b) => b.age - a.age);
+  }
+
+  return sorted;
+}
+
+
+window.onload = function () {
+  let kids = JSON.parse(localStorage.getItem("kids"));
+
+  
+  if (!kids) {
+    kids = defaultKids;
+    localStorage.setItem("kids", JSON.stringify(kids));
+    alert("No kids found. Default kids have been added.");
+  }
+
+  displayKids(kids); 
+
+ 
+  const sortSelect = document.getElementById("sort-options");
+  sortSelect.addEventListener("change", function () {
+    const sortedKids = sortKids(kids, this.value);
+    displayKids(sortedKids);
+    
+    
+    alert("تم الترتيب حسب: " + this.options[this.selectedIndex].text);
+  });
+};
+
+</script>
+<script src="theme.js"></script>
+</body>
+</html>
